@@ -16,7 +16,7 @@ CREATE TABLE role (
     department_id INTEGER,
     CONSTRAINT fk_department
         FOREIGN KEY (department_id)
-        REFRENCES department(id)
+        REFERENCES department(id)
         ON DELETE SET NULL
     
 );
@@ -29,6 +29,6 @@ CREATE TABLE employee (
     manager_id INT,
     CONSTRAINT fk_role
         FOREIGN KEY (role_id)
-        REFRENCES role(id)
+        REFERENCES role(id)
         ON SET NULL
 );
