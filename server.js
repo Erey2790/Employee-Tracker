@@ -23,23 +23,23 @@ const startPrompts = () => {
                     },
                     {
                         name: 'View all roles',
-                        value: 'View all roles',
+                        value: 'viewAllRoles',
                     },
                     {
                         name: 'View all employees',
-                        value: 'View all employees',
+                        value: 'viewAllEmployees',
                     },
                     {
                         name: 'Add a department',
-                        value: 'Add a department',
+                        value: 'addADepartment',
                     },
                     {
                         name: 'Add a role',
-                        value: 'Add a role',
+                        value: 'addARole',
                     },
                     {
                         name: 'Add a employee',
-                        value: 'Add a employee',
+                        value: 'addAEmployee',
                     },
                     {
                         name: 'Update an employee role',
@@ -76,8 +76,8 @@ const startPrompts = () => {
                 ],
             },
     ]).then(answer => {
-        if (answer.option === 'viewDepartments') {
-            db.query('SELECT * FROM departments', fucntion (err, results) {
+        if (answer.option === "viewDepartments") {
+            db.query('SELECT * FROM departments', function (err, results) {
                 console.table(results);
             })
         }
