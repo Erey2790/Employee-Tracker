@@ -2,7 +2,7 @@ const connection = require('./config/connection');
 const mysql = require('mysql2');
 const inquirer = require('inquirer'); 
 const cTable = require('console.table'); 
-// const db = require('./db');
+const db = require('./db');
 const colors = require('colors');
 
 const initApp = () => {
@@ -19,7 +19,7 @@ const startPrompts = () => {
                 choices: [
                     {
                         name: 'View all departments',
-                        value: 'View all departments',
+                        value: 'viewDepartments',
                     },
                     {
                         name: 'View all roles',
@@ -75,15 +75,18 @@ const startPrompts = () => {
                     },
                 ],
             },
-    ]).then(res => {
-        console.log(res);
-    }).catch(err => {
-        console.log(err);
+    ]).then(answer => {
+        if (answer.option === 'viewDepartments') {
+            db.query('SELECT * FROM departments', fucntion (err, results) {
+                console.table(results);
+            })
+        }
+        startPrompts();
     })
 };
 
 // view all departments 
-const displayDepartments
+
 // view all roles
 
 // view all employees
