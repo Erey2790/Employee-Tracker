@@ -8,6 +8,6 @@ const connection = mysql.createConnection({
     user: 'root',
     password: process.env.DB_PASSWORD,
     database: 'employees_db'
-  });
+});
   
-  module.exports = connection;
+module.exports = connection;
