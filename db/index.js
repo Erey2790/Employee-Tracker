@@ -4,7 +4,18 @@ class DB {
         this.connection = connection;
 
     }
+findAllDepartments() {
+    return this.connection.promise().query(
+        'SELECT * FROM department'
+    )
+}
 
+findViewAllRoles() {
+    return this.connection.promise().query(
+        'SELECT role.id, role.title, role.salary, department.name AS department FROM role LEFT JOIN department on role.department_id = department.id;'
+    )
+}
 }
 
 module.exports = new DB (connection);
+

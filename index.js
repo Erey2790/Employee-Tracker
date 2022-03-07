@@ -1,7 +1,7 @@
 // const connection = require('./config/connection');
 const mysql = require('mysql2');
 const inquirer = require('inquirer'); 
-const cTable = require('console.table'); 
+require('console.table'); 
 const db = require('./db');
 const colors = require('colors');
 
@@ -133,9 +133,24 @@ const startPrompts = () => {
 };
 
 // view all departments 
+const viewAllDepartments = function() {
+    db.findAllDepartments()
+        .then(([departments]) => {
+            console.table(departments)
+        }).then(() => {
+            startPrompts()
+        })
+}
 
 // view all roles
-
+const viewAllRoles = function() {
+    db.findViewAllRoles()
+    .then(([roles]) => {
+        console.table(roles)
+    }).then(() => {
+        startPrompts()
+    })
+}
 // view all employees
 
 // add a department
