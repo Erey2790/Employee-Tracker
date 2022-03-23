@@ -169,7 +169,14 @@ const addADepartment = function() {
         startPrompts()
     })
 }
+
+// add an employee
+
+
 // update an employee role
+
+
+
 const quit = function () {
     process.exit();
 }
