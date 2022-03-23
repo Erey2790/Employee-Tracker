@@ -10,7 +10,7 @@ const colors = require('colors');
 
   
 const initApp = () => {
-    console.log('Hello, Welcome to Employee Tracker App. Please select from one of the options below to get started.'.rainbow);
+    console.log('Hello, Welcome to Employee Tracker App. Please select from one of the options below to get started.');
     startPrompts();
 }
 
@@ -152,9 +152,23 @@ const viewAllRoles = function() {
     })
 }
 // view all employees
-
+const viewAllEmployees = function() {
+    db.viewAllEmployees()
+    .then(([employees]) => {
+        console.table(employees)
+    }).then(() => {
+        startPrompts()
+    })
+}
 // add a department
-
+const addADepartment = function() {
+    db.addADepartment()
+    .then(([add_department]) => {
+        console.table(add_department)
+    }).then(() => {
+        startPrompts()
+    })
+}
 // update an employee role
 const quit = function () {
     process.exit();

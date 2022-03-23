@@ -15,6 +15,19 @@ findViewAllRoles() {
         'SELECT role.id, role.title, role.salary, department.name AS department FROM role LEFT JOIN department on role.department_id = department.id;'
     )
 }
+
+viewAllEmployees() {
+    return this.connection.promise().query(
+        'SELECT * FROM employee'
+    )
+}
+
+addADepartment() {
+    return this.connection.promise().query(
+        'INSERT INTO department (name) VALUES (?)'
+    )
+}
+
 }
 
 module.exports = new DB (connection);
