@@ -162,11 +162,26 @@ const viewAllEmployees = function() {
 }
 // add a department
 const addADepartment = function() {
+    addDepartmentPrompt();
     db.addADepartment()
     .then(([add_department]) => {
         console.table(add_department)
     }).then(() => {
         startPrompts()
+    })
+}
+// add a department prompt
+const addDepartmentPrompt = () => {
+    inquirer.prompt ([
+        {
+            type: 'input',
+                name: 'add a department name',
+                message: 'Please enter name of department',
+                value: 'nameOfDepartment'
+        }
+    ])
+    .then(answers => {
+        console.log(answers)
     })
 }
 
