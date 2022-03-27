@@ -21,6 +21,7 @@ node index
 
 I will make a walkthrough video here.
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/90116580/160296572-49a0240b-5934-4a92-8bd4-1970a1490495.gif)
 
 ## License
 
