@@ -200,6 +200,9 @@ const viewEmployeeByDepartment = function() {
     })
 };
 
+// view employees by manager
+
+
 
 
 const quit = function () {
