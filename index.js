@@ -162,7 +162,7 @@ const viewAllEmployees = function() {
 }
 // add a department
 const addADepartment = function() {
-    addDepartmentPrompt();
+    // addDepartmentPrompt();
     db.addADepartment()
     .then(([add_department]) => {
         console.table(add_department)
@@ -174,10 +174,10 @@ const addADepartment = function() {
 const addDepartmentPrompt = () => {
     inquirer.prompt ([
         {
-            type: 'input',
+                type: 'input',
                 name: 'add a department name',
                 message: 'Please enter name of department',
-                value: 'nameOfDepartment'
+               
         }
     ])
     .then(answers => {
@@ -189,6 +189,16 @@ const addDepartmentPrompt = () => {
 
 
 // update an employee role
+
+// view employees by department
+const viewEmployeeByDepartment = function() {
+    db.viewEmployeeByDepartment()
+    .then(([viewEmpByDep]) => {
+        console.table(viewEmpByDep)
+    }).then(() => {
+        startPrompts()
+    })
+};
 
 
 
